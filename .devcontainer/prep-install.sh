@@ -1,7 +1,6 @@
 #!/bin/bash
 
-COURSE_NUM="40"
-LOCAL_FOLDER=`basename "$PWD"`
+COURSE_FOLDER=`basename "$PWD"`
 
 correct="n"
 
@@ -30,9 +29,6 @@ done
 sed -i'' -e "s/\$UTLN/${UTLN}/g" .devcontainer/devcontainer.json
 sed -i'' -e "s/\$UTLN/${UTLN}/g" .vscode/sftp.json
 
-sed -i'' -e "s/\$COURSE_NUM/${COURSE_NUM}/g" .devcontainer/devcontainer.json
-sed -i'' -e "s/\$COURSE_NUM/${COURSE_NUM}/g" .vscode/sftp.json
-
-sed -i'' -e "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
-sed -i'' -e "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .vscode/sftp.json
+sed -i'' -e "s/\$COURSE_FOLDER/${COURSE_FOLDER}/g" .devcontainer/devcontainer.json
+sed -i'' -e "s/\$COURSE_FOLDER/${COURSE_FOLDER}/g" .vscode/sftp.json
 
