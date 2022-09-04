@@ -41,7 +41,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 
 *  Press `CTRL/CMD+ SHIFT + p` [CTRL on windows, CMD on mac] 
 *  Search for `Remote-containers: Open Folder in Container`
-*  Select the `cs-175` directory from the steps above
+*  Select the `cs-COURSENUM` directory from the steps above
 *  The window should refresh - and the docker container will be built. 
 
 ## Notes
@@ -50,7 +50,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 * Feel free to press the button to view the logs and see what's happening - this step will take about 5-10m. It will only have to happen once. After the container is built, it'll be quick to load.
 * In rare cases, your system might hang at the very beginning (on step 2 or 3). If it's doing this, then run the command `rm ~/.docker/config.json` to remove the docker config file, and start over.      
 
-Once the installation is complete, you should see `Dev Container: cs-175` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
+Once the installation is complete, you should see `Dev Container: cs-COURSENUM` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
 
 ## register-ssh-key
 Run the command
@@ -62,7 +62,7 @@ This will create an ssh-key for you, so you don't need to enter your password to
 ## Automatic Backups
 Excellent! Now, from within the development container in `VSCode`:
 
-0. Ensure your current working directory is `/workspaces/cs-175`
+0. Ensure your current working directory is `/workspaces/cs-COURSENUM`
 1. Press `CTRL/CMD + SHIFT + p`
 2. Search for and select `SFTP: config`
 
@@ -89,9 +89,9 @@ Okay! For the future, anytime you want to work on `cs-COURSENUM` stuff:
 Pro tip: Sometimes `VSCode` will open automatically to your container if it's the last place you were working. If not, after opening `VSCode`, you can usually simply click on the `cs-COURSENUM [Dev Container]` link instead of doing steps 2-4 above.
 
 ### Notes on the development environment
-* When loading into the container in the way described above, you have direct access to the folders/files that live within the `cs-175` folder on your hard drive. So if you create/edit files in the `cs-175` directory in your dev container, then you'll be able to see the updated files in your the folder browser of your operating system 'as normal'. Likewise, if you remove files from the folder browser, the'll disappear from your dev container as well. **From within the container you will not be able to browse through any files on your machine outside of the `cs-175` directory.** The container is meant only for `cs-175` stuff. This is done through what's called a 'bind mount' - if you want more detail (optional), check out [this link](https://docs.docker.com/storage/bind-mounts/). 
+* When loading into the container in the way described above, you have direct access to the folders/files that live within the `cs-COURSENUM` folder on your hard drive. So if you create/edit files in the `cs-COURSENUM` directory in your dev container, then you'll be able to see the updated files in your the folder browser of your operating system 'as normal'. Likewise, if you remove files from the folder browser, the'll disappear from your dev container as well. **From within the container you will not be able to browse through any files on your machine outside of the `cs-COURSENUM` directory.** The container is meant only for `cs-COURSENUM` stuff. This is done through what's called a 'bind mount' - if you want more detail (optional), check out [this link](https://docs.docker.com/storage/bind-mounts/). 
 * You have `sudo` access in this terminal (no password required). If you need to install any software, etc., run `sudo apt install xxxxxx`. Also, if you'd like to install `VSCode` extensions within the container, feel free to do so!
-* If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-175`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-175`.
+* If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-COURSENUM`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-COURSENUM`.
 
 # scripts
 We have written some scripts for you to be able to interface with the course files and your files on the halligan server. These are all available from within the container after you've installed it. Note! You will **not** be able to run these commands from a terminal ssh'd into the homework server, nor will they work from a 'regular' terminal on your local system. **They will only work from a terminal running in the dev container you've just built.**
